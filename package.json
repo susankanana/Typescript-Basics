@@ -1,0 +1,15 @@
+{
+  "name": "Typescript",
+  "version": "1.0.0",
+  "description": "Setting up typescript",
+  "main": "index.js",
+  
+  "keywords": [],
+  "author": "Susan",
+  "license": "ISC",
+  "packageManager": "pnpm@10.11.0",
+  "devDependencies": {
+    "tsx": "^4.19.4",
+    "typescript": "^5.8.3"
+  }
+}
