@@ -3,7 +3,11 @@
   "version": "1.0.0",
   "description": "Setting up typescript",
   "main": "index.js",
-  
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc",
+    "start": "npm run build && node dist/index.js"
+  },
   "keywords": [],
   "author": "Susan",
   "license": "ISC",
