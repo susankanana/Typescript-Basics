@@ -25,25 +25,38 @@ const myPromises = () => {
     // Fetching data from an API using Promises
     // in an api to fetch data from an api using promises to resolve or reject i.e https://dummyjson.com/posts
 
-    const fetchPosts = () => {
-        return new Promise((resolve, reject) => {
-            fetch('https://dummyjson.com/posts')
-                .then(response => {
-                    if (!response.ok) throw new Error('Network response was not ok');
-                    return response.json();
-                })
-                .then(data => resolve(data.posts))// resolves means that the data is fetched successfully
-                .catch(error => reject(error)); // rejects means that there is an error in fetching the data
-        });
-    }
+    // const fetchPosts = () => {
+    //     return new Promise((resolve, reject) => {
+    //         fetch('https://dummyjson.com/posts')
+    //             .then(response => {
+    //                 if (!response.ok) throw new Error('Network response was not ok');
+    //                 return response.json();
+    //             })
+    //             .then(data => resolve(data.posts))// resolves means that the data is fetched successfully
+    //             .catch(error => reject(error)); // rejects means that there is an error in fetching the data
+    //     });
+    // }
+
+
+ const fetchPosts = async() => { 
+const response =  await fetch('https://dummyjson.com/posts'); 
+// console.log(response);
+if (!response.ok) { 
+throw new Error('Network response was not ok'); 
+} 
+const data = await response.json(); 
+// console.log("data...", data); 
+return data.posts; 
+// console.log(data.posts);
+}
 
     fetchPosts()
-    // .then(posts => {
-    //     console.log("Fetched posts:", posts);
-    // })
-    // .catch(error => {
-    //     console.error("Error fetching posts:", error);
-    // });
+    .then(posts => {
+        console.log("Fetched posts:", posts);
+    })
+    .catch(error => {
+        console.error("Error fetching posts:", error);
+    });
 
 
 
